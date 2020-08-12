@@ -116,3 +116,22 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* choices component */
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.choices button {
+  font-size: 40px;
+  padding: 20px 40px;
+}
+
+.choices button:hover {
+  background-color: rgba(155, 255, 155, 0.8);
+}

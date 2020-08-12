@@ -28,8 +28,6 @@ export const fillInVars = (str, saveData) => {
         if (str[i] === ']') {
           // go into str mode and reset 
           checkingStr = true 
-          console.log(currStr)
-          console.log(saveData[currStr])
           queue.push(saveData ? (saveData[currStr] || '') : '')
           currStr = ''
         } else {

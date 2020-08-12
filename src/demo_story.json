@@ -6,8 +6,10 @@
   },
   "assets": {
     "background001": "https://www.mariowiki.com/images/7/7d/SMO_Mushroom_Brochure_Art.png",
+    "bg-tenniscourt": "https://bluebattinghelmet.files.wordpress.com/2012/03/tennis-courts.jpg",
     "mario001": "https://vignette.wikia.nocookie.net/deathbattle/images/1/16/Mario2.png",
-    "bowser001": "https://cdn-images-1.medium.com/max/1600/1*x2Gw1gKrRQi5WEcBrKYA1g.png"
+    "bowser001": "https://cdn-images-1.medium.com/max/1600/1*x2Gw1gKrRQi5WEcBrKYA1g.png",
+    "peach001": "https://img4.wikia.nocookie.net/__cb20140712025722/loveinterest/images/7/71/Princess_Peach_Artwork_-_Super_Mario_3D_Land.png"
   },
   "scene_start": {
     "type": "title",
@@ -56,7 +58,78 @@
       "Bowser: Good to meet you, [playerName].",
       "Mario went ahead to the tennis court. I'll get my racket and go meet you there."
     ],
+    "gotoScene": "fade001",
+    "autoGoto": true
+  },
+  "scene_fade001": {
+    "type": "fadeTo",
+    "msDelay": 200,
+    "gotoScene": "tenniscourt001"
+  },
+  "scene_tenniscourt001": {
+    "type": "dialogue",
+    "people": ["bowser001"],
+    "background": "bg-tenniscourt",
+    "text": [
+      "Bowser: We're finally here, [playerName]!",
+      "Bowser: Do you want to play on my team or Mario's team?"
+    ],
+    "gotoScene": "tennisChoice001",
+    "autoGoto": true
+  },
+  "scene_tennisChoice001": {
+    "type": "choices",
+    "background": "bg-tenniscourt",
+    "choices": [
+      {
+        "text": "Play with Bowser, against Mario and Peach",
+        "gotoScene": "tenniscourt002A",
+        "changeVar": { "teammate": "Bowser" }
+      },
+      {
+        "text": "Play with Mario, against Bowser and Peach",
+        "gotoScene": "tenniscourt002B",
+        "changeVar": { "teammate": "Mario" }
+      }
+    ],
+    "gotoScene": "start",
+    "autoGoto": true
+  },
+  "scene_tenniscourt002A": {
+    "type": "dialogue",
+    "people": ["mario001", "peach001"],
+    "background": "bg-tenniscourt",
+    "text": [
+      "You chose to play with [teammate]",
+      "Bowser: Good to play with you, [playerName].",
+      "You play with [teammate] and win the game!"
+    ],
+    "gotoScene": "ending",
+    "autoGoto": true
+  },
+  "scene_tenniscourt002B": {
+    "type": "dialogue",
+    "people": ["bowser001", "peach001"],
+    "background": "bg-tenniscourt",
+    "text": [
+      "You chose to play with [teammate]",
+      "Mario: Good to play with you, [playerName].",
+      "You play with [teammate] and lose the game."
+    ],
+    "gotoScene": "ending",
+    "autoGoto": true
+  },
+  "scene_ending": {
+    "type": "dialogue",
+    "people": ["mario001", "bowser001", "peach001"],
+    "background": "bg-tenniscourt",
+    "text": [
+      "Bowser: That was a good game.",
+      "Mario: Mama mia, it was-a wonderful game!",
+      "Peach: Did you have fun? Please come play with us again!"
+    ],
     "gotoScene": "start",
     "autoGoto": true
   }
+
 }

@@ -25,7 +25,7 @@ function App() {
 
   // changes the current scene 
   const changeScene = (sceneName) => {
-    setScene(story['scene_' + sceneName])
+    setScene(story['scene_' + sceneName] || story.scene_start)
     updateProgress(sceneName)
   }
 
