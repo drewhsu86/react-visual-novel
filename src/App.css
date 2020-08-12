@@ -42,6 +42,23 @@ body {
   background-color: rgba(255,255,255,1);
 }
 
+/* portrait components  */
+
+.portrait-holder {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.portrait-img {
+  z-index: -100;
+  position: relative;
+  max-height: 70%;
+}
+
 /* title screen components  */
 
 .title {
@@ -86,3 +103,8 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.dialogue-box p {
+  margin: 10px 30px;
+}
+

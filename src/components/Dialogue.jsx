@@ -6,7 +6,11 @@ export default function Dialogue(props) {
   // index of text array from scene 
   const [currText, setCurrText] = useState(0)
 
-  console.log('currText', currText)
+  // change scene in dialogues needs to reset the text index 
+  const changeDiagScene = (sceneName) => {
+    changeScene(sceneName)
+    setCurrText(0)
+  }
 
   if (!scene) {
     return <h1>No Valid Dialogue Scene Loaded</h1>
@@ -22,18 +26,34 @@ export default function Dialogue(props) {
       }
     }
 
+    // go to scene automatically if autoGoto is set to true 
+    if (scene.autoGoto && currText >= scene.text.length ) {
+      changeDiagScene(scene.gotoScene)
+    }
+
     return (
       <div className="screen"
         style={styles}
       >
   
+        <div className="portrait-holder">
+          {
+            scene.people.map((image, ind) => {
+              return <img key={ind} alt={`Image of ${image}`}
+                className="portrait-img"
+                src={assets[image]}
+              />
+            })
+          }
+        </div>
+
         <div className="dialogue-box" onClick={handleMessage}>
           {/* if array is finished, ask if move on to next scene  */}
           {
             currText < scene.text.length ? <p>
               { scene.text[currText] }
             </p> : <div className="dialogue-horizontal">
-                <button onClick={() => changeScene(scene.gotoScene)}>
+                <button onClick={() => changeDiagScene(scene.gotoScene)}>
                   Go To Next Scene
                 </button>
                 <button onClick={() => setCurrText(0)}>

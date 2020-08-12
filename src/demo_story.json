@@ -21,9 +21,22 @@
     "people": ["mario001"],
     "background": "background001",
     "text": [
-      "Mama mia! Welcome to a-mushroom kingdom!",
-      "Have you seen Bowser? He could attack at any moment!"
+      "Mario: Mama mia! Welcome to a-mushroom kingdom!",
+      "Mario: Have you seen Bowser? He could attack at any moment!"
     ],
-    "gotoScene": "start"
+    "gotoScene": "kingdom002",
+    "autoGoto": true
+  },
+  "scene_kingdom002": {
+    "type": "dialogue",
+    "people": ["mario001", "bowser001"],
+    "background": "background001",
+    "text": [
+      "Bowser: I see you've found some new human to play with, Mario!",
+      "Mario: Bowser! You want to play tennis?",
+      "Bowser: Okay! By the way, puny human... please contact the creator for more info on how to use this visual novel creator!"
+    ],
+    "gotoScene": "start",
+    "autoGoto": true
   }
 }
