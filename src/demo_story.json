@@ -23,6 +23,7 @@
     "text": [
       "Mama mia! Welcome to a-mushroom kingdom!",
       "Have you seen Bowser? He could attack at any moment!"
-    ]
+    ],
+    "gotoScene": "start"
   }
 }

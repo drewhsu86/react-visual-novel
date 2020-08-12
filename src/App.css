@@ -42,6 +42,8 @@ body {
   background-color: rgba(255,255,255,1);
 }
 
+/* title screen components  */
+
 .title {
   display: flex;
   flex-direction: column;
@@ -63,4 +65,24 @@ body {
   padding: 10px 25px;
   border-radius: 25px;
   font-size: 50px;
+}
+
+/* dialogue screen components */
+
+.dialogue-box {
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  min-height: 100px;
+  font-size: 30px;
+  overflow-y: auto;
+  background-image: linear-gradient(180deg, blue, rgba(155, 155, 255, 0.8), rgba(255,255,255,0.5));
+  border: 3px solid rgba(255,255,255,0.8);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
