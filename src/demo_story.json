@@ -1,0 +1,28 @@
+{
+  "gameName": "Demo Game",
+  "saveData": {
+    "scene": "start",
+    "playerName": "Mike"
+  },
+  "assets": {
+    "background001": "https://www.mariowiki.com/images/7/7d/SMO_Mushroom_Brochure_Art.png",
+    "mario001": "https://vignette.wikia.nocookie.net/deathbattle/images/1/16/Mario2.png",
+    "bowser001": "https://cdn-images-1.medium.com/max/1600/1*x2Gw1gKrRQi5WEcBrKYA1g.png"
+  },
+  "scene_start": {
+    "type": "title",
+    "title": "Demo Game",
+    "subtitle": "This is just a demo!",
+    "background": "background001",
+    "scene_next": "scene_kingdom001"
+  },
+  "scene_kingdom001": {
+    "type": "dialogue",
+    "people": ["mario001"],
+    "background": "background001",
+    "text": [
+      "Mama mia! Welcome to a-mushroom kingdom!",
+      "Have you seen Bowser? He could attack at any moment!"
+    ]
+  }
+}
