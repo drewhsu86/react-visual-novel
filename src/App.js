@@ -62,11 +62,13 @@ function App() {
     return result 
   }
 
-  console.log('scene', scene)
+  console.log('saveData', story ? story.saveData : 'No saveData' )
+
   if (story) {
     // for passing props for the scenes to use 
     const controller = {
-      scene, assets: story.assets, changeScene
+      scene, assets: story.assets, changeScene,
+      saveData: story.saveData, 
     }
 
     return (

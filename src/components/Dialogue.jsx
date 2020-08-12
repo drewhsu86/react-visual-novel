@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { fillInVars } from './Logic'
 
 export default function Dialogue(props) {
-  const { scene, assets, changeScene } = props.controller
+  const { scene, assets, changeScene, saveData } = props.controller
 
   // index of text array from scene 
   const [currText, setCurrText] = useState(0)
@@ -31,6 +32,7 @@ export default function Dialogue(props) {
       changeDiagScene(scene.gotoScene)
     }
 
+    console.log(saveData)
     return (
       <div className="screen"
         style={styles}
@@ -51,7 +53,7 @@ export default function Dialogue(props) {
           {/* if array is finished, ask if move on to next scene  */}
           {
             currText < scene.text.length ? <p>
-              { scene.text[currText] }
+              { fillInVars(scene.text[currText], saveData) }
             </p> : <div className="dialogue-horizontal">
                 <button onClick={() => changeDiagScene(scene.gotoScene)}>
                   Go To Next Scene

@@ -12,7 +12,7 @@
   "scene_start": {
     "type": "title",
     "title": "Demo Game",
-    "subtitle": "This is just a demo!",
+    "subtitle": "Mushroom Kingdom Demo Game!",
     "background": "background001",
     "gotoScene": "kingdom001"
   },
@@ -34,7 +34,8 @@
     "text": [
       "Bowser: I see you've found some new human to play with, Mario!",
       "Mario: Bowser! You want to play tennis?",
-      "Bowser: Okay! By the way, puny human... please contact the creator for more info on how to use this visual novel creator!"
+      "Bowser: Okay! By the way, puny human... please contact the creator for more info on how to use this visual novel creator!",
+      "Bowser: What is your name? [playerName], was it?"
     ],
     "gotoScene": "start",
     "autoGoto": true
