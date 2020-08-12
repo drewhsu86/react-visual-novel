@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
-import demo from './demo_story'
+import loadedStory from './demo_story'
 import Scene from './components/Scene'
 
 function App() {
@@ -13,15 +13,15 @@ function App() {
 
   // load story from json
   const initialize = () => {
-    setStory(demo)
-    const sceneName = demo.saveData.scene
-    setScene(demo['scene_'+sceneName])
-    console.log(demo)
+    setStory(loadedStory)
+    const sceneName = loadedStory.saveData.scene
+    setScene(loadedStory['scene_'+sceneName])
+    console.log(loadedStory)
   }
 
   // changes the current scene 
   const changeScene = (sceneName) => {
-    setScene('scene_' + sceneName)
+    setScene(story['scene_' + sceneName])
     updateProgress(sceneName)
   }
 
@@ -64,9 +64,14 @@ function App() {
 
   console.log('scene', scene)
   if (story) {
+    // for passing props for the scenes to use 
+    const controller = {
+      scene, assets: story.assets, changeScene
+    }
+
     return (
       <div className="App">
-        <Scene scene={scene} assets={story.assets} />
+        <Scene controller={controller} />
       </div>
     );
   } else {

@@ -1,3 +1,5 @@
+/* config main containers like body and app */
+
 body {
   width: 100vw;
   height: 100vh;
@@ -19,10 +21,25 @@ body {
   padding: 0;
 }
 
+/* screen and screen components */ 
+
 .screen {
   background-size: cover;
   width: 100%;
   height: 100%;
+}
+
+.screen button {
+  font-size: 40px;
+  background-color: rgba(255,255,255,0.8);
+  border: 3px solid rgba(155,155,155,0.6);
+  border-radius: 20px;
+  margin: 5px;
+  padding: 15px 25px;
+}
+
+.screen button:hover {
+  background-color: rgba(255,255,255,1);
 }
 
 .title {
@@ -30,4 +47,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.title h1 {
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 10px;
+  padding: 20px 50px;
+  border-radius: 50px;
+  font-size: 100px;
+}
+
+.title h2 {
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 10px;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 50px;
 }

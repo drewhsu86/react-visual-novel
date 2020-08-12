@@ -14,7 +14,7 @@
     "title": "Demo Game",
     "subtitle": "This is just a demo!",
     "background": "background001",
-    "scene_next": "scene_kingdom001"
+    "gotoScene": "kingdom001"
   },
   "scene_kingdom001": {
     "type": "dialogue",

@@ -2,14 +2,12 @@ import React from 'react'
 import Title from './Title'
 
 export default function Scene(props) {
-  const { scene, assets } = props 
-
-  console.log(scene)
+  const { scene } = props.controller
 
   switch (scene.type) {
     case 'title':
       return (
-        <Title scene={scene} assets={assets} />
+        <Title controller={props.controller} />
       )
     default: 
       return (
