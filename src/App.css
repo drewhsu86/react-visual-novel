@@ -105,6 +105,14 @@ body {
 }
 
 .dialogue-box p {
-  margin: 10px 30px;
+  margin: 20px 50px;
 }
 
+/* fillText component */
+
+.fillText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

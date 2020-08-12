@@ -5,7 +5,6 @@
 // and replaces them with the actual value from saveData 
 export const fillInVars = (str, saveData) => {
   try {
-    console.log(saveData)
     // use a queue system 
     // we are either taking the string or looking for a variable name 
     let currStr = ''

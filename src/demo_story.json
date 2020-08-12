@@ -37,6 +37,25 @@
       "Bowser: Okay! By the way, puny human... please contact the creator for more info on how to use this visual novel creator!",
       "Bowser: What is your name? [playerName], was it?"
     ],
+    "gotoScene": "fillName",
+    "autoGoto": true
+  },
+  "scene_fillName": {
+    "type": "fillText",
+    "title": "Fill your name",
+    "instructions": "Click submit when done",
+    "changeVar": "playerName",
+    "gotoScene": "kingdom003"
+  },
+  "scene_kingdom003": {
+    "type": "dialogue",
+    "people": ["bowser001"],
+    "background": "background001",
+    "text": [
+      "Bowser: Oh I see! Your name is [playerName]!",
+      "Bowser: Good to meet you, [playerName].",
+      "Mario went ahead to the tennis court. I'll get my racket and go meet you there."
+    ],
     "gotoScene": "start",
     "autoGoto": true
   }

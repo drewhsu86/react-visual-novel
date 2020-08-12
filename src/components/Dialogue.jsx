@@ -32,7 +32,6 @@ export default function Dialogue(props) {
       changeDiagScene(scene.gotoScene)
     }
 
-    console.log(saveData)
     return (
       <div className="screen"
         style={styles}

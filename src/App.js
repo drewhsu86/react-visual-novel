@@ -13,10 +13,14 @@ function App() {
 
   // load story from json
   const initialize = () => {
-    setStory(loadedStory)
-    const sceneName = loadedStory.saveData.scene
-    setScene(loadedStory['scene_'+sceneName])
-    console.log(loadedStory)
+    try {
+      setStory(loadedStory)
+      const sceneName = loadedStory.saveData.scene
+      setScene(loadedStory['scene_' + sceneName])
+    } catch (error) {
+      console.log(error)
+      console.log('Error: Failed to load story')
+    }
   }
 
   // changes the current scene 
@@ -49,26 +53,22 @@ function App() {
     }
   }
 
-  // random string generator 
-  const randStr = (num) => {
-    // num is length of string 
-    let result = ''
-    for (let i = 0; i < num; i++) {
-      // unicode but i am trying to remove the empty
-      const newCharCode = Math.ceil(Math.random() * 57) + 30
-      const newChar = String.fromCharCode(newCharCode)
-      result += newChar
+  // change one variable in saveData to one value 
+  const saveVar = (key, val) => {
+    try { 
+      story.saveData[key] = val 
+      setStory(story)
+    } catch (error) {
+      console.log(error)
+      console.log('Error: Could not change ' + key + 'in saveData')
     }
-    return result 
   }
-
-  console.log('saveData', story ? story.saveData : 'No saveData' )
 
   if (story) {
     // for passing props for the scenes to use 
     const controller = {
       scene, assets: story.assets, changeScene,
-      saveData: story.saveData, 
+      saveData: story.saveData, saveVar 
     }
 
     return (
